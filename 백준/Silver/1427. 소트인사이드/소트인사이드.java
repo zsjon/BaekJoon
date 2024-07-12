@@ -5,11 +5,12 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         String[] st = br.readLine().split("");
         Arrays.sort(st, Collections.reverseOrder());
-        for(int i=0;i<st.length;i++){
-            System.out.print(st[i]);
+        for (String s : st) {
+            sb.append(s);
         }
-
+        System.out.println(sb);
     }
 }
