@@ -6,14 +6,14 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        int n = sc.nextInt();
+        int n = Integer.parseInt(br.readLine());
         ArrayList<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
-            list.add(sc.nextInt());
+            list.add(Integer.parseInt(br.readLine()));
         }
 
         Collections.sort(list);
@@ -22,7 +22,6 @@ public class Main {
             sb.append(j).append("\n");
         }
         System.out.println(sb);
-        sc.close();
+        
     }
 }
-
