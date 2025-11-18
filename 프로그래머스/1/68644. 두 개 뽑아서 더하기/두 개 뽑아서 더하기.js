@@ -8,14 +8,6 @@ function solution(numbers) {
             else answer.push(numbers[i]+numbers[j]);
         }
     }
-    for(let i = 0; i <= answer.length; i++){
-        for(let j = 0; j <= answer.length - 1; j++){
-            if(answer[j] > answer[j + 1]){
-                let temp = answer[j];
-                answer[j] = answer[j + 1];
-                answer[j + 1] = temp;
-            }
-        }
-    }
+    answer.sort((a, b) => a - b);
     return answer;
 }
