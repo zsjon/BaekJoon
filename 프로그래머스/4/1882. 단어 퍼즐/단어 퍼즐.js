@@ -1,0 +1,17 @@
+function solution(strs, t) {
+    var n = t.length;
+    let dp = new Array(n).fill(Infinity);
+    for(let i = 0; i < n; i++){
+        let current = t.substr(0, i + 1);
+        for(const str of strs){
+            if(current.endsWith(str)){
+                const diff = current.length - str.length;
+                if(!diff) dp[i] = 1;
+                else{
+                    dp[i] = Math.min(dp[i], dp[diff - 1] + 1);
+                }
+            }
+        }
+    }
+    return dp[n - 1] === Infinity ? -1 : dp[n - 1];
+}
